@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amber Wear | Ropa deportiva y fútbol</title>
+  <meta name="description" content="Amber Wear: tienda online de ropa deportiva. Tenis, playeras y shorts de tus selecciones y clubes favoritos.">
+  <link rel="icon" href="img/logo.webp">
+  <!-- Vista previa al compartir el link (WhatsApp, Instagram, etc.) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Amber Wear | Sportswear since 2026">
+  <meta property="og:description" content="Tenis Amber A25, playeras, shorts y conjuntos de tus selecciones y clubes favoritos. Semana Amber: −15% en conjuntos.">
+  <meta property="og:url" content="https://yag2511.github.io/amber-wear/">
+  <meta property="og:image" content="https://yag2511.github.io/amber-wear/img/compartir.jpg">
+  <meta name="theme-color" content="#07050d">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,800;1,800&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- =====================================================================
+       DIBUJOS (SVG) que se reutilizan con <use>.
+       Los colores se cambian desde el HTML con style="--c1:...; --c2:..."
+       ===================================================================== -->
+  <svg class="sprite" aria-hidden="true">
+    <defs>
+      <pattern id="rayas-barca" width="40" height="10" patternUnits="userSpaceOnUse">
+        <rect width="20" height="10" fill="#a50044"/><rect x="20" width="20" height="10" fill="#004d98"/>
+      </pattern>
+      <pattern id="rayas-juve" width="30" height="10" patternUnits="userSpaceOnUse">
+        <rect width="15" height="10" fill="#111"/><rect x="15" width="15" height="10" fill="#f5f5f5"/>
+      </pattern>
+
+      <!-- Tenis / taco de fútbol -->
+      <symbol id="tenis" viewBox="0 0 240 140">
+        <path d="M18 92 Q14 62 40 56 L92 44 Q104 24 128 26 L150 30 Q160 48 180 62 Q220 72 226 94 Q228 104 216 106 L28 106 Q18 104 18 92 Z" fill="var(--c1)" stroke="var(--c3)" stroke-width="2"/>
+        <path d="M128 26 L150 30 Q160 48 180 62 L170 66 Q150 52 140 34 Z" fill="var(--c3)" opacity=".85"/>
+        <path d="M70 98 L104 50 M86 100 L120 52 M102 101 L136 56" stroke="var(--c2)" stroke-width="7" stroke-linecap="round"/>
+        <path d="M150 30 Q170 30 196 70" fill="none" stroke="var(--c2)" stroke-width="4" stroke-linecap="round"/>
+        <rect x="18" y="104" width="210" height="9" rx="4" fill="var(--c2)"/>
+        <g fill="var(--c2)" opacity=".9">
+          <rect x="34" y="112" width="10" height="13" rx="3"/><rect x="62" y="112" width="10" height="13" rx="3"/>
+          <rect x="140" y="112" width="10" height="13" rx="3"/><rect x="172" y="112" width="10" height="13" rx="3"/>
+          <rect x="204" y="112" width="10" height="13" rx="3"/>
+        </g>
+      </symbol>
+
+      <!-- Playera lisa (colores por variables) -->
+      <symbol id="playera" viewBox="0 0 200 200">
+        <path d="M62 22 L86 12 Q100 30 114 12 L138 22 L186 58 L166 90 L146 76 L146 188 L54 188 L54 76 L34 90 L14 58 Z" fill="var(--c1)" stroke="var(--c2)" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M86 12 Q100 30 114 12" fill="none" stroke="var(--c3)" stroke-width="6"/>
+        <path d="M14 58 L34 90 M186 58 L166 90" stroke="var(--c3)" stroke-width="6"/>
+        <circle cx="122" cy="60" r="9" fill="none" stroke="var(--c2)" stroke-width="3"/>
+      </symbol>
+
+      <!-- Playera PSG: azul con franja central roja -->
+      <symbol id="playera-psg" viewBox="0 0 200 200">
+        <path d="M62 22 L86 12 Q100 30 114 12 L138 22 L186 58 L166 90 L146 76 L146 188 L54 188 L54 76 L34 90 L14 58 Z" fill="#0b1f4d" stroke="#0b1f4d" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="84" y="24" width="32" height="164" fill="#e30613"/>
+        <rect x="80" y="24" width="4" height="164" fill="#fff"/><rect x="116" y="24" width="4" height="164" fill="#fff"/>
+        <path d="M86 12 Q100 30 114 12" fill="none" stroke="#fff" stroke-width="6"/>
+      </symbol>
+
+      <!-- Short -->
+      <symbol id="short" viewBox="0 0 200 200">
+        <path d="M44 40 L156 40 L172 168 L112 172 L100 104 L88 172 L28 168 Z" fill="var(--c1)" stroke="var(--c2)" stroke-width="4" stroke-linejoin="round"/>
+        <rect x="44" y="36" width="112" height="16" rx="4" fill="var(--c3)"/>
+        <path d="M34 150 L84 154 M166 150 L116 154" stroke="var(--c2)" stroke-width="6" stroke-linecap="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- ============ CABECERA (logo + nombre + descripción, como el boceto) ============ -->
+  <header class="cabecera">
+    <a href="#inicio" class="logo-circulo"><img src="img/logo.webp" alt="Logo de Amber Wear: una gata con capucha morada y un trébol lima"></a>
+    <div class="cabecera-texto">
+      <h1>Amber <span>Wear</span></h1>
+      <p>Sportswear · Fútbol · Training</p>
+    </div>
+    <nav class="menu">
+      <a href="#equipos">Equipos</a>
+      <a href="#productos">Productos</a>
+      <a href="#pedido-especial">Pedido especial</a>
+      <a href="#resenas">Reseñas</a>
+      <a href="#ventana-nosotros">Nosotros</a>
+      <a href="#ventana-carrito" class="btn btn-lima btn-chico btn-carrito">Pedir <span class="contador">0</span></a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+
+    <!-- ============ DESCRIPCIÓN DE LA TIENDA ============ -->
+    <section class="marca">
+      <img src="img/logo.webp" alt="" class="marca-logo">
+      <div class="marca-texto">
+        <p class="etiqueta">Sportswear since 2026</p>
+        <h2>Viste el juego. <span class="lima">Juega con garra.</span></h2>
+        <p class="marca-desc">
+          <strong>Amber Wear</strong> es una tienda de ropa deportiva creada para quienes viven el fútbol dentro y fuera de la cancha.
+          Reunimos las playeras de las mejores selecciones y clubes del mundo, tenis de alto rendimiento y prendas de entrenamiento
+          diseñadas para moverse rápido, sentirse bien y verse mejor.
+        </p>
+        <p class="marca-desc">
+          Cada producto se elige por su calidad, comodidad y estilo. Ya sea que estés en el campo, en el gimnasio o en la grada,
+          en Amber Wear encuentras el equipo para rendir al máximo y representar a tu equipo con orgullo.
+        </p>
+        <ul class="marca-datos">
+          <li><strong>+65</strong><span>Equipos</span></li>
+          <li><strong>24/48 h</strong><span>Envío exprés</span></li>
+          <li><strong>30 días</strong><span>Cambios gratis</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ PORTADA ============ -->
+    <section class="hero">
+      <div class="hero-texto">
+        <p class="etiqueta">Nueva colección · A25</p>
+        <h2>Corre <span class="lima">más rápido.</span><br>Juega con <span class="morado-claro">garra.</span></h2>
+        <p class="hero-desc">Los nuevos tenis Amber A25 llegan en morado y lima eléctrico. Ligeros, rápidos y hechos para el pasto.</p>
+        <div class="hero-botones">
+          <a href="#ventana-a25" class="btn btn-lima">Ver Amber A25</a>
+          <a href="#productos" class="btn btn-borde">Ver todo</a>
+        </div>
+      </div>
+      <a href="#ventana-a25" class="hero-tenis" aria-label="Tenis Amber A25">
+        <img src="img/productos/a25.webp" alt="Tenis Amber A25 morado con lima" class="hero-foto">
+        <span class="hero-precio">$2,499</span>
+      </a>
+    </section>
+
+    <!-- ============ OFERTA ============ -->
+    <section class="oferta">
+      <div class="oferta-texto">
+        <p class="etiqueta">Semana Amber</p>
+        <h2><span class="lima">−15%</span> en todos los conjuntos</h2>
+        <p>Playera + short de tu equipo o de la línea Amber. El descuento se aplica solo en tu carrito.</p>
+      </div>
+      <div class="oferta-reloj" aria-label="Tiempo restante de la oferta">
+        <div><strong id="reloj-d">00</strong><span>días</span></div>
+        <div><strong id="reloj-h">00</strong><span>horas</span></div>
+        <div><strong id="reloj-m">00</strong><span>min</span></div>
+        <div><strong id="reloj-s">00</strong><span>seg</span></div>
+      </div>
+      <a href="#productos" class="btn btn-lima" data-tab="tab-conjuntos">Ver conjuntos</a>
+    </section>
+
+    <!-- ============ ENCUENTRA TU EQUIPO (pestañas solo con CSS) ============ -->
+    <section id="equipos" class="seccion">
+      <h2 class="titulo">Encuentra tu equipo</h2>
+
+      <div class="buscador">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input type="search" id="buscar-equipo" placeholder="Busca tu equipo…" aria-label="Buscar equipo" autocomplete="off">
+        <span class="buscador-cuenta" id="buscador-cuenta"></span>
+      </div>
+      <p class="sin-equipo" id="sin-equipo" hidden>No tenemos a <strong id="sin-equipo-nombre"></strong> en el catálogo… ¡pero te lo conseguimos! <a href="#pedido-especial" id="pedir-equipo">Pídelo aquí →</a></p>
+
+      <input type="radio" name="equipos" id="tab-selecciones" class="tab-input" checked>
+      <input type="radio" name="equipos" id="tab-locales" class="tab-input">
+      <input type="radio" name="equipos" id="tab-clubes" class="tab-input">
+
+      <div class="tabs">
+        <label for="tab-selecciones">Selecciones Nacionales</label>
+        <label for="tab-locales">Clubs locales</label>
+        <label for="tab-clubes">Clubes</label>
+      </div>
+
+      <div class="paneles">
+        <!-- Selecciones -->
+        <div class="panel panel-selecciones rejilla-equipos" data-titulo="Selecciones">
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="mexico" data-nombre="México" data-tipo="seleccion">
+            <img src="img/escudos/mexico.jpg" alt="Escudo de la selección de México" loading="lazy">
+            <span>México</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="argentina" data-nombre="Argentina" data-tipo="seleccion">
+            <img src="img/escudos/argentina.jpg" alt="Escudo de la selección de Argentina" loading="lazy">
+            <span>Argentina</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="espana" data-nombre="España" data-tipo="seleccion">
+            <img src="img/escudos/espana.jpg" alt="Escudo de la selección de España" loading="lazy">
+            <span>España</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="francia" data-nombre="Francia" data-tipo="seleccion">
+            <img src="img/escudos/francia.jpg" alt="Escudo de la selección de Francia" loading="lazy">
+            <span>Francia</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="alemania" data-nombre="Alemania" data-tipo="seleccion">
+            <img src="img/escudos/alemania.jpg" alt="Escudo de la selección de Alemania" loading="lazy">
+            <span>Alemania</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="brasil" data-nombre="Brasil" data-tipo="seleccion">
+            <img src="img/escudos/brasil.jpg" alt="Escudo de la selección de Brasil" loading="lazy">
+            <span>Brasil</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="italia" data-nombre="Italia" data-tipo="seleccion">
+            <img src="img/escudos/italia.jpg" alt="Escudo de la selección de Italia" loading="lazy">
+            <span>Italia</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="inglaterra" data-nombre="Inglaterra" data-tipo="seleccion">
+            <img src="img/escudos/inglaterra.jpg" alt="Escudo de la selección de Inglaterra" loading="lazy">
+            <span>Inglaterra</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="portugal" data-nombre="Portugal" data-tipo="seleccion">
+            <img src="img/escudos/portugal.jpg" alt="Escudo de la selección de Portugal" loading="lazy">
+            <span>Portugal</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="paises-bajos" data-nombre="Países Bajos" data-tipo="seleccion">
+            <img src="img/escudos/paises-bajos.jpg" alt="Escudo de la selección de Países Bajos" loading="lazy">
+            <span>Países Bajos</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="belgica" data-nombre="Bélgica" data-tipo="seleccion">
+            <img src="img/escudos/belgica.jpg" alt="Escudo de la selección de Bélgica" loading="lazy">
+            <span>Bélgica</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="croacia" data-nombre="Croacia" data-tipo="seleccion">
+            <img src="img/escudos/croacia.jpg" alt="Escudo de la selección de Croacia" loading="lazy">
+            <span>Croacia</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="colombia" data-nombre="Colombia" data-tipo="seleccion">
+            <img src="img/escudos/colombia.jpg" alt="Escudo de la selección de Colombia" loading="lazy">
+            <span>Colombia</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="marruecos" data-nombre="Marruecos" data-tipo="seleccion">
+            <img src="img/escudos/marruecos.jpg" alt="Escudo de la selección de Marruecos" loading="lazy">
+            <span>Marruecos</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="japon" data-nombre="Japón" data-tipo="seleccion">
+            <img src="img/escudos/japon.jpg" alt="Escudo de la selección de Japón" loading="lazy">
+            <span>Japón</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="corea" data-nombre="Corea del Sur" data-tipo="seleccion">
+            <img src="img/escudos/corea.jpg" alt="Escudo de la selección de Corea del Sur" loading="lazy">
+            <span>Corea del Sur</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="noruega" data-nombre="Noruega" data-tipo="seleccion">
+            <img src="img/escudos/noruega.jpg" alt="Escudo de la selección de Noruega" loading="lazy">
+            <span>Noruega</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="dinamarca" data-nombre="Dinamarca" data-tipo="seleccion">
+            <img src="img/escudos/dinamarca.jpg" alt="Escudo de la selección de Dinamarca" loading="lazy">
+            <span>Dinamarca</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="turquia" data-nombre="Turquía" data-tipo="seleccion">
+            <img src="img/escudos/turquia.jpg" alt="Escudo de Turquía" loading="lazy">
+            <span>Turquía</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="estados-unidos" data-nombre="Estados Unidos" data-tipo="seleccion">
+            <img src="img/escudos/estados-unidos.jpg" alt="Escudo de Estados Unidos" loading="lazy">
+            <span>Estados Unidos</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="suecia" data-nombre="Suecia" data-tipo="seleccion">
+            <img src="img/escudos/suecia.jpg" alt="Escudo de Suecia" loading="lazy">
+            <span>Suecia</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="suiza" data-nombre="Suiza" data-tipo="seleccion">
+            <img src="img/escudos/suiza.jpg" alt="Escudo de Suiza" loading="lazy">
+            <span>Suiza</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="australia" data-nombre="Australia" data-tipo="seleccion">
+            <img src="img/escudos/australia.jpg" alt="Escudo de Australia" loading="lazy">
+            <span>Australia</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="egipto" data-nombre="Egipto" data-tipo="seleccion">
+            <img src="img/escudos/egipto.jpg" alt="Escudo de Egipto" loading="lazy">
+            <span>Egipto</span>
+          </a>
+        </div>
+
+        <!-- Clubs locales (Liga MX) -->
+        <div class="panel panel-locales rejilla-equipos" data-titulo="Clubs locales">
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="chivas" data-nombre="Chivas" data-tipo="local">
+            <img src="img/escudos/chivas.jpg" alt="Escudo de Chivas" loading="lazy">
+            <span>Chivas</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="america" data-nombre="América" data-tipo="local">
+            <img src="img/escudos/america.jpg" alt="Escudo de América" loading="lazy">
+            <span>América</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="tigres" data-nombre="Tigres" data-tipo="local">
+            <img src="img/escudos/tigres.jpg" alt="Escudo de Tigres" loading="lazy">
+            <span>Tigres</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="pumas" data-nombre="Pumas" data-tipo="local">
+            <img src="img/escudos/pumas.jpg" alt="Escudo de Pumas" loading="lazy">
+            <span>Pumas</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="cruz-azul" data-nombre="Cruz Azul" data-tipo="local">
+            <img src="img/escudos/cruz-azul.jpg" alt="Escudo de Cruz Azul" loading="lazy">
+            <span>Cruz Azul</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="monterrey" data-nombre="Monterrey" data-tipo="local">
+            <img src="img/escudos/monterrey.jpg" alt="Escudo de Monterrey" loading="lazy">
+            <span>Monterrey</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="toluca" data-nombre="Toluca" data-tipo="local">
+            <img src="img/escudos/toluca.jpg" alt="Escudo de Toluca" loading="lazy">
+            <span>Toluca</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="santos" data-nombre="Santos Laguna" data-tipo="local">
+            <img src="img/escudos/santos.jpg" alt="Escudo de Santos Laguna" loading="lazy">
+            <span>Santos Laguna</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="leon" data-nombre="León" data-tipo="local">
+            <img src="img/escudos/leon.jpg" alt="Escudo de León" loading="lazy">
+            <span>León</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="pachuca" data-nombre="Pachuca" data-tipo="local">
+            <img src="img/escudos/pachuca.jpg" alt="Escudo de Pachuca" loading="lazy">
+            <span>Pachuca</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="atlas" data-nombre="Atlas" data-tipo="local">
+            <img src="img/escudos/atlas.jpg" alt="Escudo de Atlas" loading="lazy">
+            <span>Atlas</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="tijuana" data-nombre="Tijuana" data-tipo="local">
+            <img src="img/escudos/tijuana.jpg" alt="Escudo de Tijuana" loading="lazy">
+            <span>Tijuana</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="necaxa" data-nombre="Necaxa" data-tipo="local">
+            <img src="img/escudos/necaxa.jpg" alt="Escudo de Necaxa" loading="lazy">
+            <span>Necaxa</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="puebla" data-nombre="Puebla" data-tipo="local">
+            <img src="img/escudos/puebla.jpg" alt="Escudo de Puebla" loading="lazy">
+            <span>Puebla</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto equipo-logo" data-equipo="queretaro" data-nombre="Querétaro" data-tipo="local">
+            <img src="img/escudos/queretaro.png" alt="Escudo de Querétaro" loading="lazy">
+            <span>Querétaro</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="mazatlan" data-nombre="Mazatlán" data-tipo="local">
+            <img src="img/escudos/mazatlan.jpg" alt="Escudo de Mazatlán" loading="lazy">
+            <span>Mazatlán</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="san-luis" data-nombre="San Luis" data-tipo="local">
+            <img src="img/escudos/san-luis.jpg" alt="Escudo de Atlético San Luis" loading="lazy">
+            <span>San Luis</span>
+          </a>
+<a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="atlante" data-nombre="Atlante" data-tipo="local">
+            <img src="img/escudos/atlante.jpg" alt="Escudo de Atlante" loading="lazy">
+            <span>Atlante</span>
+          </a>
+        </div>
+
+        <!-- Clubes -->
+        <div class="panel panel-clubes rejilla-equipos" data-titulo="Clubes">
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="real-madrid" data-nombre="Real Madrid" data-tipo="club">
+            <img src="img/escudos/real-madrid.jpg" alt="Escudo de Real Madrid" loading="lazy">
+            <span>Real Madrid</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="psg" data-nombre="PSG" data-tipo="club">
+            <img src="img/escudos/psg.jpg" alt="Escudo de PSG" loading="lazy">
+            <span>PSG</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="bayern" data-nombre="Bayern Munich" data-tipo="club">
+            <img src="img/escudos/bayern.jpg" alt="Escudo de Bayern Munich" loading="lazy">
+            <span>Bayern Munich</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="barcelona" data-nombre="Barcelona" data-tipo="club">
+            <img src="img/escudos/barcelona.jpg" alt="Escudo de Barcelona" loading="lazy">
+            <span>Barcelona</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="man-city" data-nombre="Man City" data-tipo="club">
+            <img src="img/escudos/man-city.jpg" alt="Escudo de Man City" loading="lazy">
+            <span>Man City</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="man-united" data-nombre="Man United" data-tipo="club">
+            <img src="img/escudos/man-united.jpg" alt="Escudo de Man United" loading="lazy">
+            <span>Man United</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="juventus" data-nombre="Juventus" data-tipo="club">
+            <img src="img/escudos/juventus.jpg" alt="Escudo de Juventus" loading="lazy">
+            <span>Juventus</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="inter" data-nombre="Inter" data-tipo="club">
+            <img src="img/escudos/inter.jpg" alt="Escudo de Inter" loading="lazy">
+            <span>Inter</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="dortmund" data-nombre="Dortmund" data-tipo="club">
+            <img src="img/escudos/dortmund.jpg" alt="Escudo de Dortmund" loading="lazy">
+            <span>Dortmund</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="aston-villa" data-nombre="Aston Villa" data-tipo="club">
+            <img src="img/escudos/aston-villa.jpg" alt="Escudo de Aston Villa" loading="lazy">
+            <span>Aston Villa</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="milan" data-nombre="AC Milan" data-tipo="club">
+            <img src="img/escudos/milan.jpg" alt="Escudo de AC Milan" loading="lazy">
+            <span>AC Milan</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="liverpool" data-nombre="Liverpool" data-tipo="club">
+            <img src="img/escudos/liverpool.jpg" alt="Escudo de Liverpool" loading="lazy">
+            <span>Liverpool</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="arsenal" data-nombre="Arsenal" data-tipo="club">
+            <img src="img/escudos/arsenal.jpg" alt="Escudo de Arsenal" loading="lazy">
+            <span>Arsenal</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="atletico" data-nombre="Atlético Madrid" data-tipo="club">
+            <img src="img/escudos/atletico.jpg" alt="Escudo de Atlético de Madrid" loading="lazy">
+            <span>Atlético Madrid</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="chelsea" data-nombre="Chelsea" data-tipo="club">
+            <img src="img/escudos/chelsea.jpg" alt="Escudo de Chelsea" loading="lazy">
+            <span>Chelsea</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="tottenham" data-nombre="Tottenham" data-tipo="club">
+            <img src="img/escudos/tottenham.jpg" alt="Escudo de Tottenham" loading="lazy">
+            <span>Tottenham</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="newcastle" data-nombre="Newcastle" data-tipo="club">
+            <img src="img/escudos/newcastle.jpg" alt="Escudo de Newcastle" loading="lazy">
+            <span>Newcastle</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="napoli" data-nombre="Napoli" data-tipo="club">
+            <img src="img/escudos/napoli.jpg" alt="Escudo de Napoli" loading="lazy">
+            <span>Napoli</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="benfica" data-nombre="Benfica" data-tipo="club">
+            <img src="img/escudos/benfica.jpg" alt="Escudo de Benfica" loading="lazy">
+            <span>Benfica</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="porto" data-nombre="Porto" data-tipo="club">
+            <img src="img/escudos/porto.png" alt="Escudo de Porto" loading="lazy">
+            <span>Porto</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="ajax" data-nombre="Ajax" data-tipo="club">
+            <img src="img/escudos/ajax.jpg" alt="Escudo de Ajax" loading="lazy">
+            <span>Ajax</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="leverkusen" data-nombre="Leverkusen" data-tipo="club">
+            <img src="img/escudos/leverkusen.jpg" alt="Escudo de Bayer Leverkusen" loading="lazy">
+            <span>Leverkusen</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="roma" data-nombre="Roma" data-tipo="club">
+            <img src="img/escudos/roma.jpg" alt="Escudo de Roma" loading="lazy">
+            <span>Roma</span>
+          </a>
+          <a href="#ventana-equipo" class="equipo equipo-foto" data-equipo="sporting" data-nombre="Sporting CP" data-tipo="club">
+            <img src="img/escudos/sporting.jpg" alt="Escudo de Sporting CP" loading="lazy">
+            <span>Sporting CP</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PRODUCTOS: pestañas Tenis / Playeras / Shorts ============ -->
+    <section id="productos" class="seccion">
+      <h2 class="titulo">Compra por <span class="lima">categoría</span></h2>
+
+      <input type="radio" name="categoria" id="tab-tenis" class="tab-input" checked>
+      <input type="radio" name="categoria" id="tab-playeras" class="tab-input">
+      <input type="radio" name="categoria" id="tab-shorts" class="tab-input">
+      <input type="radio" name="categoria" id="tab-conjuntos" class="tab-input">
+
+      <div class="tabs">
+        <label for="tab-tenis">Tenis</label>
+        <label for="tab-playeras">Playeras</label>
+        <label for="tab-shorts">Shorts</label>
+        <label for="tab-conjuntos">Conjuntos</label>
+      </div>
+
+      <div class="paneles">
+        <!-- Tenis -->
+        <div class="panel panel-tenis cuadricula">
+          <a href="#ventana-a25" class="cuadro producto">
+            <span class="badge">Nuevo</span>
+            <div class="foto"><svg viewBox="0 0 240 140" style="--c1:#3b1773; --c2:#d4ff3a; --c3:#f4f1ff"><use href="#tenis"/></svg><img src="img/productos/a25.webp" alt="Tenis Amber A25" loading="lazy" onerror="this.remove()"></div>
+            <h3>Amber A25</h3>
+            <p class="detalle">Tacos · Pasto natural</p>
+            <p class="precio">$2,499</p>
+          </a>
+          <a href="#ventana-shadow" class="cuadro producto">
+            <div class="foto"><svg viewBox="0 0 240 140" style="--c1:#0d0b14; --c2:#d4ff3a; --c3:#7c3aed"><use href="#tenis"/></svg><img src="img/productos/a25.webp" alt="Tenis Amber A25 Shadow" class="filtro-shadow" loading="lazy" onerror="this.remove()"></div>
+            <h3>Amber A25 Shadow</h3>
+            <p class="detalle">Tacos · Negro y plata</p>
+            <p class="precio">$2,199</p>
+          </a>
+          <a href="#ventana-ghost" class="cuadro producto">
+            <div class="foto"><svg viewBox="0 0 240 140" style="--c1:#f4f1ff; --c2:#7c3aed; --c3:#d4ff3a"><use href="#tenis"/></svg><img src="img/productos/a25.webp" alt="Tenis Amber A25 Ghost" class="filtro-ghost" loading="lazy" onerror="this.remove()"></div>
+            <h3>Amber A25 Ghost</h3>
+            <p class="detalle">Tacos · Edición blanca</p>
+            <p class="precio">$1,999</p>
+          </a>
+          <a href="#ventana-gold" class="cuadro producto">
+            <span class="badge">Edición limitada</span>
+            <div class="foto"><svg viewBox="0 0 240 140" style="--c1:#f4f1ff; --c2:#7c3aed; --c3:#d4ff3a"><use href="#tenis"/></svg><img src="img/productos/a25.webp" alt="Tenis Amber A25 Gold" class="filtro-gold" loading="lazy" onerror="this.remove()"></div>
+            <h3>Amber A25 Gold</h3>
+            <p class="detalle">Tacos · Edición ámbar</p>
+            <p class="precio">$2,699</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Aqua" data-precio="2299" data-img="img/productos/a25.webp" data-desc="Los A25 en tonos azul hielo y lila sobre fondo verde neón. Frescos y rápidos." data-etiqueta="Tenis Amber A25" data-filtro="filtro-aqua" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Aqua" class="filtro-aqua" loading="lazy"></div>
+            <h3>Amber A25 Aqua</h3>
+            <p class="detalle">Tacos · Azul hielo</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Ember" data-precio="2299" data-img="img/productos/a25.webp" data-desc="Los A25 con brillo turquesa sobre un rojo intenso. Para los que juegan con fuego." data-etiqueta="Tenis Amber A25" data-filtro="filtro-ember" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Ember" class="filtro-ember" loading="lazy"></div>
+            <h3>Amber A25 Ember</h3>
+            <p class="detalle">Tacos · Turquesa y rojo</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Sunset" data-precio="2299" data-img="img/productos/a25.webp" data-desc="Los A25 en naranja y coral, inspirados en un atardecer de partido." data-etiqueta="Tenis Amber A25" data-filtro="filtro-sunset" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Sunset" class="filtro-sunset" loading="lazy"></div>
+            <h3>Amber A25 Sunset</h3>
+            <p class="detalle">Tacos · Naranja atardecer</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Magenta" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en el nuevo magenta de la marca, a juego con el uniforme Amber 26/27." data-etiqueta="Tenis Amber A25" data-filtro="filtro-magenta" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Magenta" class="filtro-magenta" loading="lazy"></div>
+            <h3>Amber A25 Magenta</h3>
+            <p class="detalle">Tacos · Magenta Amber</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Desert" data-precio="2299" data-img="img/productos/a25.webp" data-desc="Los A25 en azul hielo sobre tonos arena. Inspirados en las canchas del desierto." data-etiqueta="Tenis Amber A25" data-filtro="filtro-desert" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Desert" class="filtro-desert" loading="lazy"></div>
+            <h3>Amber A25 Desert</h3>
+            <p class="detalle">Tacos · Arena y hielo</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Jungle" data-precio="2299" data-img="img/productos/a25.webp" data-desc="Los A25 lila con destellos rosas sobre verde selva." data-etiqueta="Tenis Amber A25" data-filtro="filtro-jungle" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Jungle" class="filtro-jungle" loading="lazy"></div>
+            <h3>Amber A25 Jungle</h3>
+            <p class="detalle">Tacos · Lila y verde selva</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Emerald" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en rosa intenso con brillo esmeralda. Edición elegante." data-etiqueta="Tenis Amber A25" data-filtro="filtro-emerald" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Emerald" class="filtro-emerald" loading="lazy"></div>
+            <h3>Amber A25 Emerald</h3>
+            <p class="detalle">Tacos · Esmeralda y rosa</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Blossom" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en blanco con detalles verdes sobre fondo flor de cerezo." data-etiqueta="Tenis Amber A25" data-filtro="filtro-blossom" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Blossom" class="filtro-blossom" loading="lazy"></div>
+            <h3>Amber A25 Blossom</h3>
+            <p class="detalle">Tacos · Blanco y rosa</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Frost" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 blancos con franjas rojas, frescos como el hielo." data-etiqueta="Tenis Amber A25" data-filtro="filtro-frost" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Frost" class="filtro-frost" loading="lazy"></div>
+            <h3>Amber A25 Frost</h3>
+            <p class="detalle">Tacos · Blanco y rojo</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Bronze" data-precio="2499" data-img="img/productos/a25.webp" data-desc="Los A25 en bronce envejecido. Clásicos, sobrios y con mucha garra." data-etiqueta="Tenis Amber A25" data-filtro="filtro-bronze" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Bronze" class="filtro-bronze" loading="lazy"></div>
+            <h3>Amber A25 Bronze</h3>
+            <p class="detalle">Tacos · Bronce</p>
+            <p class="precio">$2,499</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Neon" data-precio="2599" data-img="img/productos/a25.webp" data-desc="Los A25 con colores al máximo: lima, morado y rosa neón. Imposibles de no ver." data-etiqueta="Tenis Amber A25" data-filtro="filtro-neon" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Neon" class="filtro-neon" loading="lazy"></div>
+            <h3>Amber A25 Neon</h3>
+            <p class="detalle">Tacos · Neón eléctrico</p>
+            <p class="precio">$2,599</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Midnight" data-precio="2499" data-img="img/productos/a25.webp" data-desc="Los A25 oscuros en azul medianoche, para jugar bajo las luces del estadio." data-etiqueta="Tenis Amber A25" data-filtro="filtro-midnight" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Midnight" class="filtro-midnight" loading="lazy"></div>
+            <h3>Amber A25 Midnight</h3>
+            <p class="detalle">Tacos · Azul medianoche</p>
+            <p class="precio">$2,499</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Red Devil" data-precio="2599" data-img="img/productos/a25.webp" data-desc="Los A25 en rojo intenso sobre negro total. Agresivos, rápidos y con garra." data-etiqueta="Tenis Amber A25" data-filtro="filtro-red-devil" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Red Devil" class="filtro-red-devil" loading="lazy"></div>
+            <h3>Amber A25 Red Devil</h3>
+            <p class="detalle">Tacos · Rojo y negro</p>
+            <p class="precio">$2,599</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Inferno" data-precio="2499" data-img="img/productos/a25.webp" data-desc="Los A25 en rojo brillante con destellos de fuego." data-etiqueta="Tenis Amber A25" data-filtro="filtro-inferno" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Inferno" class="filtro-inferno" loading="lazy"></div>
+            <h3>Amber A25 Inferno</h3>
+            <p class="detalle">Tacos · Rojo fuego</p>
+            <p class="precio">$2,499</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Carbon" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en negro y grafito: discretos por fuera, explosivos en la cancha." data-etiqueta="Tenis Amber A25" data-filtro="filtro-carbon" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Carbon" class="filtro-carbon" loading="lazy"></div>
+            <h3>Amber A25 Carbon</h3>
+            <p class="detalle">Tacos · Negro carbón</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Polar" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en blanco puro con líneas negras. Un clásico que combina con todo." data-etiqueta="Tenis Amber A25" data-filtro="filtro-polar" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Polar" class="filtro-polar" loading="lazy"></div>
+            <h3>Amber A25 Polar</h3>
+            <p class="detalle">Tacos · Blanco y negro</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Cobalt" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en azul eléctrico, fríos como el hielo." data-etiqueta="Tenis Amber A25" data-filtro="filtro-cobalt" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Cobalt" class="filtro-cobalt" loading="lazy"></div>
+            <h3>Amber A25 Cobalt</h3>
+            <p class="detalle">Tacos · Azul cobalto</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Toxic" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en verde ácido brillante. Imposibles de no ver." data-etiqueta="Tenis Amber A25" data-filtro="filtro-toxic" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Toxic" class="filtro-toxic" loading="lazy"></div>
+            <h3>Amber A25 Toxic</h3>
+            <p class="detalle">Tacos · Verde tóxico</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Amethyst" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en morado amatista, el color más Amber de todos." data-etiqueta="Tenis Amber A25" data-filtro="filtro-amethyst" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Amethyst" class="filtro-amethyst" loading="lazy"></div>
+            <h3>Amber A25 Amethyst</h3>
+            <p class="detalle">Tacos · Morado amatista</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Solar" data-precio="2499" data-img="img/productos/a25.webp" data-desc="Los A25 en amarillo dorado intenso, como el sol al mediodía." data-etiqueta="Tenis Amber A25" data-filtro="filtro-solar" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Solar" class="filtro-solar" loading="lazy"></div>
+            <h3>Amber A25 Solar</h3>
+            <p class="detalle">Tacos · Amarillo sol</p>
+            <p class="precio">$2,499</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Flamingo" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en fucsia brillante sobre fondo oscuro." data-etiqueta="Tenis Amber A25" data-filtro="filtro-flamingo" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Flamingo" class="filtro-flamingo" loading="lazy"></div>
+            <h3>Amber A25 Flamingo</h3>
+            <p class="detalle">Tacos · Rosa fucsia</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Coral" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en tonos durazno y coral, suaves y elegantes." data-etiqueta="Tenis Amber A25" data-filtro="filtro-coral" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Coral" class="filtro-coral" loading="lazy"></div>
+            <h3>Amber A25 Coral</h3>
+            <p class="detalle">Tacos · Durazno y coral</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Arctic" data-precio="2399" data-img="img/productos/a25.webp" data-desc="Los A25 en blanco y azul hielo, frescos como el ártico." data-etiqueta="Tenis Amber A25" data-filtro="filtro-arctic" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Arctic" class="filtro-arctic" loading="lazy"></div>
+            <h3>Amber A25 Arctic</h3>
+            <p class="detalle">Tacos · Blanco ártico</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Galaxy" data-precio="2599" data-img="img/productos/a25.webp" data-desc="Los A25 con un degradado de galaxia azul y naranja. Edición especial." data-etiqueta="Tenis Amber A25" data-filtro="filtro-galaxy" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Galaxy" class="filtro-galaxy" loading="lazy"></div>
+            <h3>Amber A25 Galaxy</h3>
+            <p class="detalle">Tacos · Azul galaxia y naranja</p>
+            <p class="precio">$2,599</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Lava" data-precio="2499" data-img="img/productos/a25.webp" data-desc="Los A25 turquesa sobre un fondo rojo lava." data-etiqueta="Tenis Amber A25" data-filtro="filtro-lava" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Lava" class="filtro-lava" loading="lazy"></div>
+            <h3>Amber A25 Lava</h3>
+            <p class="detalle">Tacos · Turquesa sobre lava</p>
+            <p class="precio">$2,499</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Nebula" data-precio="2499" data-img="img/productos/a25.webp" data-desc="Los A25 en lila y verde, inspirados en una nebulosa." data-etiqueta="Tenis Amber A25" data-filtro="filtro-nebula" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Nebula" class="filtro-nebula" loading="lazy"></div>
+            <h3>Amber A25 Nebula</h3>
+            <p class="detalle">Tacos · Lila nebulosa</p>
+            <p class="precio">$2,499</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Vanilla" data-precio="2299" data-img="img/productos/a25.webp" data-desc="Los A25 en crema y lila, suaves y con estilo retro." data-etiqueta="Tenis Amber A25" data-filtro="filtro-vanilla" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Vanilla" class="filtro-vanilla" loading="lazy"></div>
+            <h3>Amber A25 Vanilla</h3>
+            <p class="detalle">Tacos · Crema vainilla</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Amber A25 Tiger" data-precio="2499" data-img="img/productos/a25.webp" data-desc="Los A25 en naranja intenso, inspirados en el pelaje de Amber." data-etiqueta="Tenis Amber A25" data-filtro="filtro-tiger" data-lista="Suela para pasto natural|Peso ligero|Tallas 24 – 30 cm">
+            <div class="foto"><img src="img/productos/a25.webp" alt="Amber A25 Tiger" class="filtro-tiger" loading="lazy"></div>
+            <h3>Amber A25 Tiger</h3>
+            <p class="detalle">Tacos · Naranja tigre</p>
+            <p class="precio">$2,499</p>
+          </a>
+        </div>
+
+        <!-- Playeras -->
+        <div class="panel panel-playeras cuadricula">
+          <a href="#ventana-rma" class="cuadro producto">
+            <span class="badge">Top ventas</span>
+            <div class="foto"><svg viewBox="0 0 200 200" style="--c1:#fafafa; --c2:#c9a227; --c3:#1b2a5c"><use href="#playera"/></svg><img src="img/productos/playera-real-madrid.jpg" alt="Playera Real Madrid local" loading="lazy" onerror="this.remove()"></div>
+            <h3>Real Madrid Local</h3>
+            <p class="detalle">Clubes · LaLiga</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-mex" class="cuadro producto">
+            <div class="foto"><svg viewBox="0 0 200 200" style="--c1:#006847; --c2:#ce1126; --c3:#ffffff"><use href="#playera"/></svg><img src="img/productos/playera-mexico.jpg" alt="Playera México local" loading="lazy" onerror="this.remove()"></div>
+            <h3>México Local</h3>
+            <p class="detalle">Selecciones</p>
+            <p class="precio">$1,499</p>
+          </a>
+          <a href="#ventana-psg" class="cuadro producto">
+            <div class="foto"><svg viewBox="0 0 200 200"><use href="#playera-psg"/></svg><img src="img/productos/playera-psg.jpg" alt="Playera PSG local" loading="lazy" onerror="this.remove()"></div>
+            <h3>PSG Local</h3>
+            <p class="detalle">Clubes · Ligue 1</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-bay" class="cuadro producto">
+            <div class="foto"><svg viewBox="0 0 200 200" style="--c1:#dc052d; --c2:#ffffff; --c3:#0066b2"><use href="#playera"/></svg><img src="img/productos/playera-bayern.jpg" alt="Playera Bayern Munich local" loading="lazy" onerror="this.remove()"></div>
+            <h3>Bayern Munich Local</h3>
+            <p class="detalle">Clubes · Bundesliga</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="barcelona" data-nombre="Barcelona" data-tipo="club">
+            <div class="foto"><img src="img/playeras/barcelona.jpg" alt="Playera local Barcelona" loading="lazy"></div>
+            <h3>Barcelona Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="man-city" data-nombre="Man City" data-tipo="club">
+            <div class="foto"><img src="img/playeras/man-city.jpg" alt="Playera local Man City" loading="lazy"></div>
+            <h3>Man City Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="man-united" data-nombre="Man United" data-tipo="club">
+            <div class="foto"><img src="img/playeras/man-united.jpg" alt="Playera local Man United" loading="lazy"></div>
+            <h3>Man United Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="liverpool" data-nombre="Liverpool" data-tipo="club">
+            <div class="foto"><img src="img/playeras/liverpool.jpg" alt="Playera local Liverpool" loading="lazy"></div>
+            <h3>Liverpool Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="arsenal" data-nombre="Arsenal" data-tipo="club">
+            <div class="foto"><img src="img/playeras/arsenal.jpg" alt="Playera local Arsenal" loading="lazy"></div>
+            <h3>Arsenal Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="chelsea" data-nombre="Chelsea" data-tipo="club">
+            <div class="foto"><img src="img/playeras/chelsea.jpg" alt="Playera local Chelsea" loading="lazy"></div>
+            <h3>Chelsea Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="juventus" data-nombre="Juventus" data-tipo="club">
+            <div class="foto"><img src="img/playeras/juventus.jpg" alt="Playera local Juventus" loading="lazy"></div>
+            <h3>Juventus Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="inter" data-nombre="Inter" data-tipo="club">
+            <div class="foto"><img src="img/playeras/inter.jpg" alt="Playera local Inter" loading="lazy"></div>
+            <h3>Inter Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="milan" data-nombre="AC Milan" data-tipo="club">
+            <div class="foto"><img src="img/playeras/milan.jpg" alt="Playera local AC Milan" loading="lazy"></div>
+            <h3>AC Milan Local</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$1,599</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="argentina" data-nombre="Argentina" data-tipo="seleccion">
+            <div class="foto"><img src="img/playeras/argentina.jpg" alt="Playera local Argentina" loading="lazy"></div>
+            <h3>Argentina Local</h3>
+            <p class="detalle">Selecciones</p>
+            <p class="precio">$1,499</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="brasil" data-nombre="Brasil" data-tipo="seleccion">
+            <div class="foto"><img src="img/playeras/brasil.jpg" alt="Playera local Brasil" loading="lazy"></div>
+            <h3>Brasil Local</h3>
+            <p class="detalle">Selecciones</p>
+            <p class="precio">$1,499</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="francia" data-nombre="Francia" data-tipo="seleccion">
+            <div class="foto"><img src="img/playeras/francia.jpg" alt="Playera local Francia" loading="lazy"></div>
+            <h3>Francia Local</h3>
+            <p class="detalle">Selecciones</p>
+            <p class="precio">$1,499</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="espana" data-nombre="España" data-tipo="seleccion">
+            <div class="foto"><img src="img/playeras/espana.jpg" alt="Playera local España" loading="lazy"></div>
+            <h3>España Local</h3>
+            <p class="detalle">Selecciones</p>
+            <p class="precio">$1,499</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="inglaterra" data-nombre="Inglaterra" data-tipo="seleccion">
+            <div class="foto"><img src="img/playeras/inglaterra.jpg" alt="Playera local Inglaterra" loading="lazy"></div>
+            <h3>Inglaterra Local</h3>
+            <p class="detalle">Selecciones</p>
+            <p class="precio">$1,499</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="portugal" data-nombre="Portugal" data-tipo="seleccion">
+            <div class="foto"><img src="img/playeras/portugal.jpg" alt="Playera local Portugal" loading="lazy"></div>
+            <h3>Portugal Local</h3>
+            <p class="detalle">Selecciones</p>
+            <p class="precio">$1,499</p>
+          </a>
+          <a href="#ventana-equipo" class="cuadro producto" data-equipo="america" data-nombre="América" data-tipo="local">
+            <div class="foto"><img src="img/playeras/america.jpg" alt="Playera local América" loading="lazy"></div>
+            <h3>América Local</h3>
+            <p class="detalle">Liga MX</p>
+            <p class="precio">$1,299</p>
+          </a>
+        </div>
+
+        <!-- Shorts -->
+        <div class="panel panel-shorts cuadricula">
+          <a href="#ventana-short-rma" class="cuadro producto">
+            <div class="foto"><svg viewBox="0 0 200 200" style="--c1:#fafafa; --c2:#c9a227; --c3:#1b2a5c"><use href="#short"/></svg><img src="img/productos/short-real-madrid.jpg" alt="Short Real Madrid" loading="lazy" onerror="this.remove()"></div>
+            <h3>Short Real Madrid</h3>
+            <p class="detalle">Clubes</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-short-mex" class="cuadro producto">
+            <div class="foto"><svg viewBox="0 0 200 200" style="--c1:#ffffff; --c2:#006847; --c3:#ce1126"><use href="#short"/></svg><img src="img/productos/short-mexico.jpg" alt="Short México" loading="lazy" onerror="this.remove()"></div>
+            <h3>Short México</h3>
+            <p class="detalle">Selecciones</p>
+            <p class="precio">$849</p>
+          </a>
+          <a href="#ventana-short-amber" class="cuadro producto">
+            <span class="badge">Amber</span>
+            <div class="foto"><svg viewBox="0 0 200 200" style="--c1:#3b1773; --c2:#d4ff3a; --c3:#0d0b14"><use href="#short"/></svg><img src="img/productos/amber-short.svg" alt="Short Amber 26/27" loading="lazy" onerror="this.remove()"></div>
+            <h3>Short Amber 26/27</h3>
+            <p class="detalle">Amber Wear</p>
+            <p class="precio">$699</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Man City" data-precio="899" data-img="img/shorts/man-city.jpg" data-desc="El short local oficial de Man City, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/man-city.jpg" alt="Short Man City" loading="lazy"></div>
+            <h3>Short Man City</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Man United" data-precio="899" data-img="img/shorts/man-united.jpg" data-desc="El short local oficial de Man United, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/man-united.jpg" alt="Short Man United" loading="lazy"></div>
+            <h3>Short Man United</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Liverpool" data-precio="899" data-img="img/shorts/liverpool.jpg" data-desc="El short local oficial de Liverpool, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/liverpool.jpg" alt="Short Liverpool" loading="lazy"></div>
+            <h3>Short Liverpool</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Arsenal" data-precio="899" data-img="img/shorts/arsenal.jpg" data-desc="El short local oficial de Arsenal, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/arsenal.jpg" alt="Short Arsenal" loading="lazy"></div>
+            <h3>Short Arsenal</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Bayern Munich" data-precio="899" data-img="img/shorts/bayern.jpg" data-desc="El short local oficial de Bayern Munich, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/bayern.jpg" alt="Short Bayern Munich" loading="lazy"></div>
+            <h3>Short Bayern Munich</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Juventus" data-precio="899" data-img="img/shorts/juventus.jpg" data-desc="El short local oficial de Juventus, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/juventus.jpg" alt="Short Juventus" loading="lazy"></div>
+            <h3>Short Juventus</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short AC Milan" data-precio="899" data-img="img/shorts/milan.jpg" data-desc="El short local oficial de AC Milan, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/milan.jpg" alt="Short AC Milan" loading="lazy"></div>
+            <h3>Short AC Milan</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Dortmund" data-precio="899" data-img="img/shorts/dortmund.jpg" data-desc="El short local oficial de Dortmund, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/dortmund.jpg" alt="Short Dortmund" loading="lazy"></div>
+            <h3>Short Dortmund</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Roma" data-precio="899" data-img="img/shorts/roma.jpg" data-desc="El short local oficial de Roma, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/roma.jpg" alt="Short Roma" loading="lazy"></div>
+            <h3>Short Roma</h3>
+            <p class="detalle">Clubes · Local</p>
+            <p class="precio">$899</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Argentina" data-precio="849" data-img="img/shorts/argentina.jpg" data-desc="El short local oficial de Argentina, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/argentina.jpg" alt="Short Argentina" loading="lazy"></div>
+            <h3>Short Argentina</h3>
+            <p class="detalle">Selecciones · Local</p>
+            <p class="precio">$849</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short España" data-precio="849" data-img="img/shorts/espana.jpg" data-desc="El short local oficial de España, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/espana.jpg" alt="Short España" loading="lazy"></div>
+            <h3>Short España</h3>
+            <p class="detalle">Selecciones · Local</p>
+            <p class="precio">$849</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Alemania" data-precio="849" data-img="img/shorts/alemania.jpg" data-desc="El short local oficial de Alemania, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/alemania.jpg" alt="Short Alemania" loading="lazy"></div>
+            <h3>Short Alemania</h3>
+            <p class="detalle">Selecciones · Local</p>
+            <p class="precio">$849</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Italia" data-precio="849" data-img="img/shorts/italia.jpg" data-desc="El short local oficial de Italia, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/italia.jpg" alt="Short Italia" loading="lazy"></div>
+            <h3>Short Italia</h3>
+            <p class="detalle">Selecciones · Local</p>
+            <p class="precio">$849</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Portugal" data-precio="849" data-img="img/shorts/portugal.jpg" data-desc="El short local oficial de Portugal, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/portugal.jpg" alt="Short Portugal" loading="lazy"></div>
+            <h3>Short Portugal</h3>
+            <p class="detalle">Selecciones · Local</p>
+            <p class="precio">$849</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Marruecos" data-precio="849" data-img="img/shorts/marruecos.jpg" data-desc="El short local oficial de Marruecos, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/marruecos.jpg" alt="Short Marruecos" loading="lazy"></div>
+            <h3>Short Marruecos</h3>
+            <p class="detalle">Selecciones · Local</p>
+            <p class="precio">$849</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short América" data-precio="799" data-img="img/shorts/america.jpg" data-desc="El short local oficial de América, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/america.jpg" alt="Short América" loading="lazy"></div>
+            <h3>Short América</h3>
+            <p class="detalle">Liga MX · Local</p>
+            <p class="precio">$799</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Short Tigres" data-precio="799" data-img="img/shorts/tigres.jpg" data-desc="El short local oficial de Tigres, ligero y transpirable, a juego con su playera." data-etiqueta="Short oficial" data-lista="Tela ligera|Cintura elástica|Tallas CH – XG">
+            <div class="foto"><img src="img/shorts/tigres.jpg" alt="Short Tigres" loading="lazy"></div>
+            <h3>Short Tigres</h3>
+            <p class="detalle">Liga MX · Local</p>
+            <p class="precio">$799</p>
+          </a>
+        </div>
+
+        <!-- Conjuntos -->
+        <div class="panel panel-conjuntos cuadricula">
+          <a href="#ventana-amber-kit" class="cuadro producto">
+            <span class="badge">Nuevo · Amber</span>
+            <div class="foto"><img src="img/productos/amber-uniforme.svg" alt="Uniforme Amber 26/27: playera morada con patrón de tréboles y short a juego" loading="lazy"></div>
+            <h3>Uniforme Amber 26/27</h3>
+            <p class="detalle">Playera + short · Amber Wear</p>
+            <p class="precio">$1,999</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Uniforme Amber Ginger 26/27" data-precio="1999" data-img="img/productos/amber-ginger-uniforme.svg" data-desc="Inspirado en Amber, nuestra gata naranja: playera naranja con rayas atigradas tonales, cuello en V crema, doble cinta crema en los hombros, puños morados y el escudo del gato al frente. Incluye short crema con paneles morados y el número 25." data-etiqueta="Diseño Amber Wear" data-lista="Playera + short|Edición inspirada en Amber|Personalizable con nombre y número|Tallas CH – XG">
+            <span class="badge">Nuevo · Ginger</span>
+            <div class="foto"><img src="img/productos/amber-ginger-uniforme.svg" alt="Uniforme Amber Ginger: playera naranja atigrada y short crema" loading="lazy"></div>
+            <h3>Uniforme Amber Ginger 26/27</h3>
+            <p class="detalle">Playera + short · Amber Wear</p>
+            <p class="precio">$1,999</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Uniforme Amber Visitante 26/27" data-precio="1999" data-img="img/productos/amber-visitante-uniforme.svg" data-desc="El uniforme de visitante de Amber Wear: playera blanca con patrón tonal de tréboles y huellas en lila, cuello en V morado, doble cinta morada en los hombros y el escudo del gato al frente. Short morado con el 25 en lima." data-etiqueta="Diseño Amber Wear" data-lista="Playera + short|Diseño exclusivo Amber Wear|Personalizable con nombre y número|Tallas CH – XG">
+            <span class="badge">Nuevo · Visitante</span>
+            <div class="foto"><img src="img/productos/amber-visitante-uniforme.svg" alt="Uniforme Amber Visitante: playera blanca con detalles morados y short morado" loading="lazy"></div>
+            <h3>Uniforme Amber Visitante 26/27</h3>
+            <p class="detalle">Playera + short · Amber Wear</p>
+            <p class="precio">$1,999</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Uniforme Amber Portero 26/27" data-precio="1999" data-img="img/productos/amber-portero-uniforme.svg" data-desc="El uniforme de portero de Amber Wear: playera lima eléctrico para que te vean de lejos, cuello en V negro, cintas y puños negros y el escudo del gato al frente. Short negro con el número 1." data-etiqueta="Diseño Amber Wear" data-lista="Playera + short|Diseño exclusivo Amber Wear|Personalizable con nombre y número|Tallas CH – XG">
+            <span class="badge">Nuevo · Portero</span>
+            <div class="foto"><img src="img/productos/amber-portero-uniforme.svg" alt="Uniforme Amber Portero: playera lima con detalles negros y short negro" loading="lazy"></div>
+            <h3>Uniforme Amber Portero 26/27</h3>
+            <p class="detalle">Playera + short · Amber Wear</p>
+            <p class="precio">$1,999</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Real Madrid" data-precio="2299" data-img="img/playeras/real-madrid.jpg" data-desc="El uniforme local completo de Real Madrid: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/shorts/real-madrid.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/real-madrid.jpg" alt="Playera Conjunto Real Madrid" loading="lazy"><img src="img/shorts/real-madrid.jpg" alt="Short Conjunto Real Madrid" loading="lazy"></div>
+            <h3>Conjunto Real Madrid</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Man City" data-precio="2299" data-img="img/playeras/man-city.jpg" data-desc="El uniforme local completo de Man City: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/shorts/man-city.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/man-city.jpg" alt="Playera Conjunto Man City" loading="lazy"><img src="img/shorts/man-city.jpg" alt="Short Conjunto Man City" loading="lazy"></div>
+            <h3>Conjunto Man City</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Bayern Munich" data-precio="2299" data-img="img/playeras/bayern.jpg" data-desc="El uniforme local completo de Bayern Munich: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/shorts/bayern.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/bayern.jpg" alt="Playera Conjunto Bayern Munich" loading="lazy"><img src="img/shorts/bayern.jpg" alt="Short Conjunto Bayern Munich" loading="lazy"></div>
+            <h3>Conjunto Bayern Munich</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Liverpool" data-precio="2299" data-img="img/playeras/liverpool.jpg" data-desc="El uniforme local completo de Liverpool: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/shorts/liverpool.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/liverpool.jpg" alt="Playera Conjunto Liverpool" loading="lazy"><img src="img/shorts/liverpool.jpg" alt="Short Conjunto Liverpool" loading="lazy"></div>
+            <h3>Conjunto Liverpool</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Man United" data-precio="2299" data-img="img/playeras/man-united.jpg" data-desc="El uniforme local completo de Man United: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/shorts/man-united.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/man-united.jpg" alt="Playera Conjunto Man United" loading="lazy"><img src="img/shorts/man-united.jpg" alt="Short Conjunto Man United" loading="lazy"></div>
+            <h3>Conjunto Man United</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto AC Milan" data-precio="2299" data-img="img/playeras/milan.jpg" data-desc="El uniforme local completo de AC Milan: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/shorts/milan.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/milan.jpg" alt="Playera Conjunto AC Milan" loading="lazy"><img src="img/shorts/milan.jpg" alt="Short Conjunto AC Milan" loading="lazy"></div>
+            <h3>Conjunto AC Milan</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Juventus" data-precio="2299" data-img="img/playeras/juventus.jpg" data-desc="El uniforme local completo de Juventus: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/shorts/juventus.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/juventus.jpg" alt="Playera Conjunto Juventus" loading="lazy"><img src="img/shorts/juventus.jpg" alt="Short Conjunto Juventus" loading="lazy"></div>
+            <h3>Conjunto Juventus</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto México" data-precio="2199" data-img="img/playeras/mexico.jpg" data-desc="El uniforme local completo de México: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/productos/short-mexico.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/mexico.jpg" alt="Playera Conjunto México" loading="lazy"><img src="img/productos/short-mexico.jpg" alt="Short Conjunto México" loading="lazy"></div>
+            <h3>Conjunto México</h3>
+            <p class="detalle">Playera + short · Selecciones</p>
+            <p class="precio">$2,199</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Portugal" data-precio="2199" data-img="img/playeras/portugal.jpg" data-desc="El uniforme local completo de Portugal: playera y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-img2="img/shorts/portugal.jpg" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG">
+            <div class="foto foto-doble"><img src="img/playeras/portugal.jpg" alt="Playera Conjunto Portugal" loading="lazy"><img src="img/shorts/portugal.jpg" alt="Short Conjunto Portugal" loading="lazy"></div>
+            <h3>Conjunto Portugal</h3>
+            <p class="detalle">Playera + short · Selecciones</p>
+            <p class="precio">$2,199</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Borussia Dortmund" data-precio="2299" data-img="img/playeras/dortmund.jpg" data-desc="El uniforme local completo del Borussia Dortmund: playera amarilla y short negro oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG" data-img2="img/shorts/dortmund.jpg">
+            <div class="foto foto-doble"><img src="img/playeras/dortmund.jpg" alt="Playera Conjunto Borussia Dortmund" loading="lazy"><img src="img/shorts/dortmund.jpg" alt="Short Conjunto Borussia Dortmund" loading="lazy"></div>
+            <h3>Conjunto Borussia Dortmund</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto España" data-precio="2199" data-img="img/playeras/espana.jpg" data-desc="El uniforme local completo de España: playera roja y short azul oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-lista="Playera + short local|Personalizable con nombre y número|Tallas CH – XG" data-img2="img/shorts/espana.jpg">
+            <div class="foto foto-doble"><img src="img/playeras/espana.jpg" alt="Playera Conjunto España" loading="lazy"><img src="img/shorts/espana.jpg" alt="Short Conjunto España" loading="lazy"></div>
+            <h3>Conjunto España</h3>
+            <p class="detalle">Playera + short · Selecciones</p>
+            <p class="precio">$2,199</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Francia Visitante · Mbappé 10" data-precio="2399" data-img="img/productos/conjunto-francia-visitante.jpg" data-desc="El conjunto visitante de Francia en verde menta con detalles dorados, con el nombre y número de Mbappé ya estampados." data-etiqueta="Conjunto completo" data-lista="Playera + short|Personalizable con nombre y número|Tallas CH – XG">
+            <span class="badge">Edición jugador</span>
+            <div class="foto"><img src="img/productos/conjunto-francia-visitante.jpg" alt="Conjunto Francia Visitante · Mbappé 10" loading="lazy"></div>
+            <h3>Conjunto Francia Visitante · Mbappé 10</h3>
+            <p class="detalle">Playera + short · Selecciones</p>
+            <p class="precio">$2,399</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Arsenal" data-precio="2299" data-img="img/playeras/arsenal.jpg" data-desc="El uniforme local completo del Arsenal: playera roja y short blanco oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-lista="Playera + short|Personalizable con nombre y número|Tallas CH – XG" data-img2="img/shorts/arsenal.jpg">
+            <div class="foto foto-doble"><img src="img/playeras/arsenal.jpg" alt="Playera Conjunto Arsenal" loading="lazy"><img src="img/shorts/arsenal.jpg" alt="Short Conjunto Arsenal" loading="lazy"></div>
+            <h3>Conjunto Arsenal</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Alemania" data-precio="2199" data-img="img/playeras/alemania.jpg" data-desc="El uniforme local completo de Alemania: playera blanca y short negro oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-lista="Playera + short|Personalizable con nombre y número|Tallas CH – XG" data-img2="img/shorts/alemania.jpg">
+            <div class="foto foto-doble"><img src="img/playeras/alemania.jpg" alt="Playera Conjunto Alemania" loading="lazy"><img src="img/shorts/alemania.jpg" alt="Short Conjunto Alemania" loading="lazy"></div>
+            <h3>Conjunto Alemania</h3>
+            <p class="detalle">Playera + short · Selecciones</p>
+            <p class="precio">$2,199</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Italia" data-precio="2199" data-img="img/playeras/italia.jpg" data-desc="El uniforme local completo de Italia: la clásica playera azzurra y su short oficial. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-lista="Playera + short|Personalizable con nombre y número|Tallas CH – XG" data-img2="img/shorts/italia.jpg">
+            <div class="foto foto-doble"><img src="img/playeras/italia.jpg" alt="Playera Conjunto Italia" loading="lazy"><img src="img/shorts/italia.jpg" alt="Short Conjunto Italia" loading="lazy"></div>
+            <h3>Conjunto Italia</h3>
+            <p class="detalle">Playera + short · Selecciones</p>
+            <p class="precio">$2,199</p>
+          </a>
+          <a href="#ventana-prenda" class="cuadro producto" data-prenda="Conjunto Roma" data-precio="2299" data-img="img/playeras/roma.jpg" data-desc="El uniforme local completo de la AS Roma: playera granate y short oficiales. Ahorras comprando el conjunto." data-etiqueta="Conjunto completo" data-lista="Playera + short|Personalizable con nombre y número|Tallas CH – XG" data-img2="img/shorts/roma.jpg">
+            <div class="foto foto-doble"><img src="img/playeras/roma.jpg" alt="Playera Conjunto Roma" loading="lazy"><img src="img/shorts/roma.jpg" alt="Short Conjunto Roma" loading="lazy"></div>
+            <h3>Conjunto Roma</h3>
+            <p class="detalle">Playera + short · Clubes</p>
+            <p class="precio">$2,299</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PEDIDO ESPECIAL ============ -->
+    <section id="pedido-especial" class="seccion">
+      <div class="cuadro especial">
+        <div class="especial-texto">
+          <p class="etiqueta">Pedido especial</p>
+          <h2 class="titulo">¿No encuentras <span class="lima">lo que buscas?</span></h2>
+          <p>Pídenos cualquier playera, short, conjunto o prenda que no esté en el catálogo: otro equipo, otra temporada, una edición retro o un diseño personalizado. Nosotros lo conseguimos y te avisamos en 48 h.</p>
+          <ul class="especial-pasos">
+            <li><strong>1</strong> Cuéntanos qué buscas</li>
+            <li><strong>2</strong> Te mandamos precio y foto</li>
+            <li><strong>3</strong> Lo recibes en casa</li>
+          </ul>
+        </div>
+        <form class="formulario formulario-especial" id="form-especial">
+          <div class="fila">
+            <label>Tipo de prenda
+              <select name="tipo" required>
+                <option value="">Elige una opción</option>
+                <option>Playera</option><option>Short</option><option>Conjunto completo</option>
+                <option>Tenis</option><option>Chamarra / sudadera</option><option>Otra prenda</option>
+              </select>
+            </label>
+            <label>Equipo o marca<input name="equipo" type="text" placeholder="Ej: RB Leipzig" required></label>
+          </div>
+          <div class="fila">
+            <label>Temporada / versión<input name="temporada" type="text" placeholder="Ej: Local 2026, retro 1998"></label>
+            <label>Talla<input name="talla" type="text" placeholder="Ej: M o 27 cm" required></label>
+          </div>
+          <label>Detalles<textarea name="detalles" rows="3" placeholder="Nombre y número, color, manga larga, etc."></textarea></label>
+          <div class="fila">
+            <label>Nombre<input name="nombre" type="text" placeholder="Tu nombre" required></label>
+            <label>Correo<input name="correo" type="email" placeholder="tu@correo.com" required></label>
+          </div>
+          <button type="submit" class="btn btn-lima">Enviar pedido especial</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ============ RESEÑAS (cuadros) ============ -->
+    <section id="resenas" class="seccion">
+      <div class="resenas-cabeza">
+        <h2 class="titulo">Lo que dice <span class="lima">la banda</span></h2>
+        <div class="resenas-nota"><strong>4.9</strong><div><span class="estrellas">★★★★★</span><small>+1,200 reseñas verificadas</small></div></div>
+      </div>
+      <div class="cuadricula resenas">
+        <article class="cuadro resena">
+          <div class="estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p class="resena-texto">“El naranja atigrado se ve todavía mejor en persona. Lo usamos en mi equipo de la liga y todos preguntaron dónde lo compramos.”</p>
+          <div class="resena-autor"><span class="avatar">V</span><div><strong>Valeria G.</strong><small>Monterrey · Compró Uniforme Amber Ginger 26/27</small></div></div>
+        </article>
+        <article class="cuadro resena">
+          <div class="estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p class="resena-texto">“Súper ligeros y agarran perfecto en pasto natural. Me llegaron en 24 horas, no me lo creía.”</p>
+          <div class="resena-autor"><span class="avatar">D</span><div><strong>Diego R.</strong><small>CDMX · Compró Amber A25 Red Devil</small></div></div>
+        </article>
+        <article class="cuadro resena">
+          <div class="estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p class="resena-texto">“Le puse nombre y número y quedó idéntica a la oficial. Además el cambio de talla fue gratis y rapidísimo.”</p>
+          <div class="resena-autor"><span class="avatar">F</span><div><strong>Fernanda L.</strong><small>Guadalajara · Compró Playera Real Madrid</small></div></div>
+        </article>
+        <article class="cuadro resena">
+          <div class="estrellas" aria-label="5 de 5 estrellas">★★★★★</div>
+          <p class="resena-texto">“Por fin un uniforme de portero que no es aburrido. El lima se ve desde toda la cancha y la tela no da calor.”</p>
+          <div class="resena-autor"><span class="avatar">S</span><div><strong>Santiago M.</strong><small>Puebla · Compró Uniforme Amber Portero 26/27</small></div></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ VENTAJAS (cuadros) ============ -->
+    <section class="seccion">
+      <div class="cuadricula ventajas">
+        <div class="cuadro ventaja"><div class="icono"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 14h22v18H4z"/><path d="M26 20h9l7 7v5H26z"/><circle cx="12" cy="34" r="4"/><circle cx="34" cy="34" r="4"/><path d="M2 20h8M0 26h7"/></svg></div><h3>Envío exprés</h3><p>Recibe tu pedido en 24/48 h.</p></div>
+        <div class="cuadro ventaja"><div class="icono"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 6l-9 4-6 10 7 4 3-4v22h24V20l3 4 7-4-6-10-9-4c-1 3-4 5-7 5s-6-2-7-5z"/><path d="M17 25h5v5h-5v6h5M31 25h-5v5h5v6h-5"/></svg></div><h3>Personaliza</h3><p>Nombre y número en tu playera.</p></div>
+        <div class="cuadro ventaja"><div class="icono"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M38 18A15 15 0 0 0 10 16"/><path d="M10 8v8h8"/><path d="M10 30a15 15 0 0 0 28 2"/><path d="M38 40v-8h-8"/></svg></div><h3>Cambios gratis</h3><p>Tienes 30 días para cambiarlo.</p></div>
+        <div class="cuadro ventaja"><div class="icono"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 4l16 6v12c0 10-7 18-16 22C15 40 8 32 8 22V10z"/><path d="M17 24l5 5 9-10"/></svg></div><h3>Pago seguro</h3><p>Tarjeta, OXXO o PayPal.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ PIE DE PÁGINA ============ -->
+  <footer class="pie">
+    <div class="pie-marca">
+      <img src="img/logo.webp" alt="" class="pie-logo">
+      <p><strong>Amber Wear</strong><br>Ropa deportiva con garra.</p>
+    </div>
+    <div>
+      <h4>Tienda</h4>
+      <a href="#equipos">Equipos</a>
+      <a href="#productos">Productos</a>
+      <a href="#ventana-carrito">Mi carrito</a>
+      <a href="#ventana-tallas">Guía de tallas</a>
+    </div>
+    <div>
+      <h4>Ayuda</h4>
+      <a href="#ventana-nosotros">Sobre nosotros</a>
+      <a href="#ventana-pedido">Contacto</a>
+    </div>
+    <p class="copy">© 2026 Amber Wear · Proyecto escolar. Escudos y diseños ilustrativos.</p>
+  </footer>
+
+
+  <!-- =====================================================================
+       VENTANAS (se abren con el enlace #id gracias al selector CSS :target)
+       ===================================================================== -->
+
+  <!-- Tenis -->
+  <div id="ventana-amber-kit" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>uniforme-amber-26-27.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><img src="img/productos/amber-uniforme.svg" alt="Uniforme Amber 26/27: playera y short"></div>
+        <div>
+          <p class="etiqueta">Diseño Amber Wear</p>
+          <h3>Uniforme Amber 26/27</h3>
+          <p class="precio">$1,999</p>
+          <p>Edición de diseñador: playera morado profundo con un patrón tonal de tréboles y huellas de Amber, cuello en V con filo lima, doble cinta lima en los hombros y el escudo del gato bordado en el pecho. Incluye short a juego con el número 25.</p>
+          <ul><li>Playera + short</li><li>Personalizable con nombre y número</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Uniforme Amber 26/27" data-precio="1999">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ventana-a25" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>amber-a25.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 240 140" style="--c1:#3b1773; --c2:#d4ff3a; --c3:#f4f1ff"><use href="#tenis"/></svg><img src="img/productos/a25.webp" alt="Tenis Amber A25" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Amber A25</h3>
+          <p class="precio">$2,499</p>
+          <p>Nuestros tacos más rápidos: morado profundo con franjas lima eléctrico. Ultraligeros y con agarre total en pasto natural.</p>
+          <ul><li>Peso: 180 g</li><li>Suela para pasto natural</li><li>Tallas 24 – 30 cm</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Amber A25" data-precio="2499">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ventana-shadow" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>amber-a25-shadow.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 240 140" style="--c1:#0d0b14; --c2:#d4ff3a; --c3:#7c3aed"><use href="#tenis"/></svg><img src="img/productos/a25.webp" alt="Tenis Amber A25 Shadow" class="filtro-shadow" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Amber A25 Shadow</h3>
+          <p class="precio">$2,199</p>
+          <p>La versión oscura de los A25: negro profundo con destellos plateados. Pensados para jugar de noche y en pasto sintético.</p>
+          <ul><li>Tacos cortos</li><li>Suela para sintético</li><li>Tallas 24 – 30 cm</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Amber A25 Shadow" data-precio="2199">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ventana-ghost" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>amber-a25-ghost.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 240 140" style="--c1:#f4f1ff; --c2:#7c3aed; --c3:#d4ff3a"><use href="#tenis"/></svg><img src="img/productos/a25.webp" alt="Tenis Amber A25 Ghost" class="filtro-ghost" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Amber A25 Ghost</h3>
+          <p class="precio">$1,999</p>
+          <p>Los A25 en blanco con detalles lila. Limpios, ligeros y rápidos desde el primer partido.</p>
+          <ul><li>Piel sintética suave</li><li>Suela para pasto natural</li><li>Tallas 24 – 30 cm</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Amber A25 Ghost" data-precio="1999">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="ventana-gold" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>amber-a25-gold.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 240 140" style="--c1:#f4f1ff; --c2:#7c3aed; --c3:#d4ff3a"><use href="#tenis"/></svg><img src="img/productos/a25.webp" alt="Tenis Amber A25 Gold" class="filtro-gold" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Amber A25 Gold</h3>
+          <p class="precio">$2,699</p>
+          <p>Edición limitada en color ámbar, el color que le da nombre a la marca. Dorados, brillantes y con garra.</p>
+          <ul><li>Piel sintética suave</li><li>Suela para pasto natural</li><li>Tallas 24 – 30 cm</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Amber A25 Gold" data-precio="2699">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Playeras -->
+  <div id="ventana-rma" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>real-madrid-local.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 200 200" style="--c1:#fafafa; --c2:#c9a227; --c3:#1b2a5c"><use href="#playera"/></svg><img src="img/productos/playera-real-madrid.jpg" alt="Playera Real Madrid local" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Real Madrid Local</h3>
+          <p class="precio">$1,599</p>
+          <p>La clásica playera blanca del club más ganador de Europa, con detalles dorados y cuello azul marino.</p>
+          <ul><li>Tela transpirable</li><li>Personalizable con nombre y número</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Real Madrid Local" data-precio="1599">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ventana-mex" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>mexico-local.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 200 200" style="--c1:#006847; --c2:#ce1126; --c3:#ffffff"><use href="#playera"/></svg><img src="img/productos/playera-mexico.jpg" alt="Playera México local" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>México Local</h3>
+          <p class="precio">$1,499</p>
+          <p>El verde del Tri con detalles rojos y blancos. Para apoyar a la selección en la cancha o en casa.</p>
+          <ul><li>Tela transpirable</li><li>Personalizable con nombre y número</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="México Local" data-precio="1499">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ventana-psg" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>psg-local.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 200 200"><use href="#playera-psg"/></svg><img src="img/productos/playera-psg.jpg" alt="Playera PSG local" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>PSG Local</h3>
+          <p class="precio">$1,599</p>
+          <p>Azul con la franja central roja y bordes blancos, el diseño más icónico de París (temporada 2026/27).</p>
+          <ul><li>Tela transpirable</li><li>Personalizable con nombre y número</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="PSG Local" data-precio="1599">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ventana-bay" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>bayern-local.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 200 200" style="--c1:#dc052d; --c2:#ffffff; --c3:#0066b2"><use href="#playera"/></svg><img src="img/productos/playera-bayern.jpg" alt="Playera Bayern Munich local" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Bayern Munich Local</h3>
+          <p class="precio">$1,599</p>
+          <p>Franjas rojas y blancas con el escudo bordado: la playera del gigante alemán, inspirada en su ciudad, Múnich.</p>
+          <ul><li>Tela transpirable</li><li>Personalizable con nombre y número</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Bayern Munich Local" data-precio="1599">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shorts -->
+  <div id="ventana-short-rma" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>short-real-madrid.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 200 200" style="--c1:#fafafa; --c2:#c9a227; --c3:#1b2a5c"><use href="#short"/></svg><img src="img/productos/short-real-madrid.jpg" alt="Short Real Madrid" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Short Real Madrid</h3>
+          <p class="precio">$899</p>
+          <p>Short blanco a juego con la playera local, con resorte cómodo y detalles dorados.</p>
+          <ul><li>Tela ligera</li><li>Cintura elástica</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Short Real Madrid" data-precio="899">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ventana-short-mex" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>short-mexico.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 200 200" style="--c1:#ffffff; --c2:#006847; --c3:#ce1126"><use href="#short"/></svg><img src="img/productos/short-mexico.jpg" alt="Short México" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Short México</h3>
+          <p class="precio">$849</p>
+          <p>Short blanco con detalles verdes y rojos para completar el uniforme del Tri.</p>
+          <ul><li>Tela ligera</li><li>Cintura elástica</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Short México" data-precio="849">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="ventana-short-amber" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>short-amber-26-27.html<a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande"><svg viewBox="0 0 200 200" style="--c1:#3b1773; --c2:#d4ff3a; --c3:#0d0b14"><use href="#short"/></svg><img src="img/productos/amber-short.svg" alt="Short Amber 26/27" loading="lazy" onerror="this.remove()"></div>
+        <div>
+          <h3>Short Amber 26/27</h3>
+          <p class="precio">$699</p>
+          <p>El short oficial de Amber Wear: negro con franjas lima y cintura morada, a juego con la playera Amber 26/27.</p>
+          <ul><li>Secado rápido</li><li>Bolsillos con cierre</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" data-agregar="Short Amber 26/27" data-precio="699">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pedido (formulario) -->
+  <div id="ventana-pedido" class="ventana">
+    <a href="#inicio" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja ventana-chica">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>hacer-pedido.html<a href="#inicio" class="cerrar">✕</a></div>
+      <form class="formulario" id="form-pedido" action="#ventana-gracias">
+        <h3>Haz tu pedido</h3>
+        <div class="resumen" id="resumen-pedido"><p class="vacio">Tu carrito está vacío.</p></div>
+        <label>Nombre<input type="text" placeholder="Tu nombre" required></label>
+        <label>Correo<input type="email" placeholder="tu@correo.com" required></label>
+        <label>Dirección de envío<input type="text" placeholder="Calle, número, ciudad" required></label>
+        <div class="fila">
+          <label>Talla<input type="text" placeholder="Ej: M o 27 cm" required></label>
+          <label>Nombre en playera<input type="text" placeholder="Ej: YAGO 10" maxlength="14"></label>
+        </div>
+        <button type="submit" class="btn btn-lima">Enviar pedido</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Gracias -->
+  <div id="ventana-gracias" class="ventana">
+    <a href="#inicio" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja ventana-chica">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>pedido-enviado.html<a href="#inicio" class="cerrar">✕</a></div>
+      <div class="ventana-centro">
+        <img src="img/logo.webp" alt="" class="ventana-logo">
+        <h3>¡Gracias por tu pedido!</h3>
+        <p>Amber ya está preparando tu paquete. ¡Nos vemos en la cancha!</p>
+        <a href="#inicio" class="btn btn-lima">Volver a la tienda</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sobre nosotros (descripción de la tienda) -->
+  <div id="ventana-nosotros" class="ventana">
+    <a href="#inicio" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja ventana-chica">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>sobre-nosotros.html<a href="#inicio" class="cerrar">✕</a></div>
+      <div class="ventana-centro">
+        <img src="img/logo.webp" alt="" class="ventana-logo">
+        <h3>Sobre Amber Wear</h3>
+        <p><strong>Amber Wear</strong> es una tienda online de ropa deportiva: tenis de fútbol, playeras y shorts de selecciones nacionales y clubes de todo el mundo.</p>
+        <p>Nuestra mascota es Amber, una gata guerrera con capucha morada, armadura y un trébol de la suerte: valiente, astuta y con garra, como queremos que juegues tú.</p>
+        <a href="#productos" class="btn btn-lima">Ver productos</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana de equipo (se llena con script.js según el equipo) -->
+  <div id="ventana-equipo" class="ventana">
+    <a href="#equipos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span><span id="equipo-archivo">equipo.html</span><a href="#equipos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande foto-equipo"><img id="equipo-foto" src="" alt=""><img id="equipo-escudo-mini" class="escudo-mini" src="" alt=""></div>
+        <div>
+          <p class="etiqueta" id="equipo-tipo">Club</p>
+          <h3 id="equipo-titulo">Playera local</h3>
+          <p class="precio" id="equipo-precio">$1,599</p>
+          <p id="equipo-desc"></p>
+          <ul><li>Tela transpirable</li><li>Personalizable con nombre y número</li><li>Tallas CH – XG</li></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" id="equipo-agregar" data-agregar="" data-precio="">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ventana genérica de producto (se llena con script.js) -->
+  <div id="ventana-prenda" class="ventana">
+    <a href="#productos" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span><span id="prenda-archivo">producto.html</span><a href="#productos" class="cerrar">✕</a></div>
+      <div class="ventana-contenido">
+        <div class="foto foto-grande" id="prenda-foto"><img id="prenda-img" src="" alt=""><img id="prenda-img2" src="" alt="" hidden></div>
+        <div>
+          <p class="etiqueta" id="prenda-etiqueta">Amber Wear</p>
+          <h3 id="prenda-titulo">Producto</h3>
+          <p class="precio" id="prenda-precio">$0</p>
+          <p id="prenda-desc"></p>
+          <ul id="prenda-lista"></ul>
+          <div class="ventana-botones"><a href="#ventana-carrito" class="btn btn-lima" id="prenda-agregar" data-agregar="" data-precio="">Añadir al pedido</a><a href="#ventana-tallas" class="btn btn-borde">Guía de tallas</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmación de pedido especial -->
+  <div id="ventana-especial" class="ventana">
+    <a href="#pedido-especial" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja ventana-chica">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>pedido-especial.html<a href="#pedido-especial" class="cerrar">✕</a></div>
+      <div class="ventana-centro">
+        <img src="img/logo.webp" alt="" class="ventana-logo">
+        <h3>¡Pedido especial recibido!</h3>
+        <p id="especial-resumen"></p>
+        <p>Amber ya está buscando tu prenda. Te escribiremos en menos de 48 h con el precio y una foto.</p>
+        <a href="#productos" class="btn btn-lima">Seguir viendo</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carrito -->
+  <div id="ventana-carrito" class="ventana">
+    <a href="#inicio" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja ventana-chica">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>mi-carrito.html<a href="#inicio" class="cerrar">✕</a></div>
+      <div class="carrito">
+        <h3>Tu carrito</h3>
+        <ul class="carrito-lista" id="carrito-lista"></ul>
+        <p class="vacio" id="carrito-vacio">Todavía no agregas nada. ¡Échale un ojo a la colección A25!</p>
+        <p class="carrito-descuento" id="carrito-descuento" hidden><span>Semana Amber −15% en conjuntos</span><strong id="descuento-monto">−$0</strong></p>
+        <div class="carrito-total"><span>Total</span><strong id="carrito-total">$0</strong></div>
+        <div class="ventana-botones">
+          <a href="#ventana-pedido" class="btn btn-lima" id="btn-finalizar">Finalizar pedido</a>
+          <a href="#productos" class="btn btn-borde">Seguir comprando</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Guía de tallas -->
+  <div id="ventana-tallas" class="ventana">
+    <a href="#inicio" class="ventana-fondo" aria-label="Cerrar"></a>
+    <div class="ventana-caja ventana-chica">
+      <div class="ventana-barra"><span class="puntos"><i></i><i></i><i></i></span>guia-de-tallas.html<a href="#inicio" class="cerrar">✕</a></div>
+      <div class="carrito">
+        <h3>Guía de tallas</h3>
+        <h4 class="tallas-sub">Playeras</h4>
+        <table class="tabla-tallas">
+          <tr><th>Talla</th><th>Pecho</th><th>Largo</th><th>Estatura</th></tr>
+          <tr><td>CH</td><td>88–96 cm</td><td>70 cm</td><td>160–170</td></tr>
+          <tr><td>M</td><td>96–104 cm</td><td>72 cm</td><td>170–178</td></tr>
+          <tr><td>G</td><td>104–112 cm</td><td>74 cm</td><td>178–185</td></tr>
+          <tr><td>XG</td><td>112–124 cm</td><td>76 cm</td><td>185+</td></tr>
+        </table>
+        <h4 class="tallas-sub">Shorts</h4>
+        <table class="tabla-tallas">
+          <tr><th>Talla</th><th>Cintura</th><th>Cadera</th><th>Largo</th></tr>
+          <tr><td>CH</td><td>70–76 cm</td><td>88–94 cm</td><td>44 cm</td></tr>
+          <tr><td>M</td><td>76–84 cm</td><td>94–102 cm</td><td>46 cm</td></tr>
+          <tr><td>G</td><td>84–92 cm</td><td>102–110 cm</td><td>48 cm</td></tr>
+          <tr><td>XG</td><td>92–102 cm</td><td>110–120 cm</td><td>50 cm</td></tr>
+        </table>
+        <h4 class="tallas-sub">Tenis</h4>
+        <table class="tabla-tallas">
+          <tr><th>MX</th><th>US</th><th>EU</th><th>Pie</th></tr>
+          <tr><td>25</td><td>7</td><td>40</td><td>24.5 cm</td></tr>
+          <tr><td>26</td><td>8</td><td>41</td><td>25.5 cm</td></tr>
+          <tr><td>27</td><td>9</td><td>42.5</td><td>26.5 cm</td></tr>
+          <tr><td>28</td><td>10</td><td>44</td><td>27.5 cm</td></tr>
+        </table>
+        <p class="vacio">¿Entre dos tallas? Te recomendamos la más grande.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Aviso flotante -->
+  <div class="aviso" id="aviso" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
